@@ -1,0 +1,356 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-dark: #030712;       
+    --card-bg: #0b132b;       
+    --border-line: #1c2541;   
+    --neon-accent: #48cae4;   
+    --text-white: #ffffff;
+    --text-slate: #94a3b8;    
+}
+
+body#about {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    min-height: 100vh;
+    padding: 20px 5%; 
+    transition: padding 0.3s ease;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-line);
+    border-radius: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap; 
+}
+
+nav .logo {
+    background: var(--neon-accent);
+    color: var(--bg-dark);
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+nav .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 12px;
+    margin-right: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: var(--text-slate);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    color: var(--neon-accent);
+}
+
+.about-card {
+    position: relative;
+    width: 100%;
+    display: grid; 
+    grid-template-columns: 320px 1fr; 
+    gap: 30px;
+    margin-bottom: 35px;
+    align-items: start; 
+} 
+
+.image {
+    position: relative;
+    width: 100%; 
+    height: 420px; 
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-line);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+#img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover; 
+    object-position: top center; 
+    border: 2px solid var(--neon-accent);
+    box-shadow: 0px 0px 20px rgba(72, 202, 228, 0.15);
+}
+
+.gopal-text-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-line);
+    border-radius: 20px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gopal-text-card h2 {
+    color: var(--neon-accent); 
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.gopal-text-card p {
+    color: var(--text-slate);
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-line);
+    gap: 30px;
+}
+
+.info-box i {
+    font-size: 1.5rem;
+    color: var(--neon-accent);
+    margin-top: 2px;
+}
+
+.info-text h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 4px;
+}
+
+.info-text p {
+    font-size: 0.9rem;
+    color: var(--text-slate);
+}
+
+
+.quad-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.education, .experience, .skills, .interest {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-line);
+    border-radius: 16px;
+    padding: 25px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.education:hover, .experience:hover, .skills:hover, .interest:hover {
+    border-color: var(--neon-accent);
+    transform: translateY(-5px);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-line);
+    padding-bottom: 12px;
+}
+
+.title i {
+    font-size: 1.3rem;
+    color: var(--neon-accent);
+}
+
+.title h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.quad-grid ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quad-grid ul li {
+    color: var(--text-slate);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+.journey-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-line);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.journey-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.journey-header i {
+    font-size: 2rem;
+    color: var(--neon-accent);
+}
+
+.journey-header h2 {
+    font-size: 1.8rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 25px;
+    border-left: 2px solid var(--border-line);
+    display: flex;
+    flex-direction: column;
+    gap: 24px; 
+}
+
+.timeline-row {
+    display: flex;
+    align-items: flex-start; 
+    position: relative;
+}
+
+.circle-node {
+    position: absolute;
+    left: -32px; 
+    top: 6px; 
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #3a506b;
+    border: 2px solid var(--bg-dark);
+}
+
+.circle-node.blue {
+    background-color: var(--neon-accent);
+    box-shadow: 0 0 10px var(--neon-accent);
+}
+
+.timeline-year {
+    font-weight: 700;
+    color: var(--neon-accent);
+    min-width: 70px; 
+    font-size: 1.1rem;
+}
+
+.timeline-content {
+    color: var(--text-slate);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    flex: 1; 
+}
+
+
+
+@media (max-width: 1024px) {
+    body#about {
+        padding: 20px 4%;
+    }
+    .about-card {
+        grid-template-columns: 1fr; 
+        gap: 25px;
+    }
+    .image {
+        max-width: 320px;
+        height: 400px;
+        margin: 0 auto; 
+    }
+    .quad-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+@media (max-width: 768px) {
+   
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+    nav .logo-text {
+        margin: 0 auto;
+    }
+    nav ul {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap; 
+    }
+    nav ul li a {
+        font-size: 0.95rem;
+    }
+    
+    .gopal-text-card {
+        padding: 25px 20px;
+    }
+    .gopal-text-card h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .info-box {
+        flex-direction: column; 
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .quad-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    .journey-section {
+        padding: 30px 20px;
+    }
+    .timeline-row {
+        flex-direction: column; 
+        gap: 5px;
+    }
+    .timeline-content {
+        font-size: 0.95rem;
+    }
+}
+
+
+

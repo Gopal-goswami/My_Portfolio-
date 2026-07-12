@@ -1,0 +1,295 @@
+/* ==========================================================================
+   1. Base Setup & Dark Palette Tokens
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-dark: #030712;       /* Blackish Deep Dark */
+    --card-bg: #0b132b;       /* Premium Dark navy blue cards */
+    --border-line: #1c2541;   /* Elegant border lines */
+    --neon-blue: #48cae4;     /* Cyan Blue tint accents */
+    --purple-glow: #8b5cf6;   /* Purple heading highlight color */
+    --text-white: #ffffff;
+    --text-slate: #cbd5e1;    /* High contrast text gray */
+    --text-muted: #94a3b8;    /* Softer gray for description */
+}
+
+body#projects-page {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    min-height: 100vh;
+    padding: 20px 7%;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. Shared Navbar Framework
+   ========================================================================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-line);
+    border-radius: 12px;
+    margin-bottom: 50px;
+}
+
+nav .logo {
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+nav .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 12px;
+    margin-right: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    color: var(--neon-blue);
+}
+
+/* ==========================================================================
+   3. Header Summary Formatting
+   ========================================================================== */
+.projects-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.projects-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.projects-header h1 span {
+    color: var(--purple-glow);
+    text-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+.projects-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   4. Grid Setup Matrix (3 Columns Layout)
+   ========================================================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-line);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Round corners handle inside components */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 15px 30px rgba(3, 7, 18, 0.6);
+}
+
+/* ==========================================================================
+   5. Inner Card Components & Badges Layout
+   ========================================================================== */
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 230px; /* Fixed height for dashboard snapshot previews */
+    background-color: #050914;
+    border-bottom: 1px solid var(--border-line);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Stops stretched ratios on dashboards screenshot */
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+.project-card:hover .project-img {
+    opacity: 1;
+}
+
+/* Floating index number label styling */
+.project-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(139, 92, 246, 0.85); /* Premium solid violet background */
+    color: var(--text-white);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    z-index: 5;
+}
+
+/* Content blocks */
+.project-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Pushes action links container cleanly to bottom line */
+}
+
+.project-info h2 {
+    font-size: 1.35rem;
+    color: var(--text-white);
+    margin-bottom: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.project-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Tech badge elements */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto; /* Attaches grid badges straight at base context info */
+}
+
+.tag {
+    background-color: rgba(28, 37, 65, 0.6);
+    border: 1px solid var(--border-line);
+    color: var(--neon-blue);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   6. Action Footer Hyperlinks Layout
+   ========================================================================== */
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    background-color: rgba(5, 9, 20, 0.4);
+    border-top: 1px solid var(--border-line);
+}
+
+.project-links a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.live-btn {
+    color: var(--purple-glow);
+}
+
+.live-btn:hover {
+    color: var(--text-white);
+    transform: translateX(2px);
+}
+
+.code-btn {
+    color: var(--text-slate);
+}
+
+.code-btn:hover {
+    color: var(--neon-blue);
+}
+
+/* ==========================================================================
+   7. Device Framework Media Queries (Responsiveness)
+   ========================================================================== */
+
+/* Medium Devices (Large viewports tablets / small screen laptops) */
+@media (max-width: 1100px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Matrix shifts to 2 columns setup */
+        gap: 25px;
+    }
+}
+
+/* Small Devices (Mobile viewports & standard size tablets) */
+@media (max-width: 768px) {
+    body#projects-page {
+        padding: 20px 4%;
+    }
+
+    /* Shared Collapse Navigation Bar */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+    nav .logo-text {
+        margin: 0 auto;
+    }
+    nav ul {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .projects-header h1 {
+        font-size: 2.3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Cards cleanly stacks vertically 1-by-1 */
+    }
+    
+    .card-image-wrapper {
+        height: 200px; /* Slight scaling crop factor adjustment for phones */
+    }
+}

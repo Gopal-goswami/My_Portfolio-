@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopal Goswami - Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Welcome Preloader Screen -->
+    <div id="welcome-screen">
+        <div class="welcome-wrapper">
+
+            <!-- Center Logo Grid -->
+            <div class="logo-container">
+                <!-- Make sure your file name matches exactly -->
+                <img src="/assets/images/gg_logo.png" alt="GG Logo" class="tech-logo">
+            </div>
+
+            <!-- Name Title Section -->
+            <h1 class="dev-name">GOPAL <span class="blue-text">GOSWAMI</span></h1>
+
+            <!-- Subtitle Tags -->
+            <p class="dev-subtitle">
+                <span class="bracket">&lt;</span> AI/ML ENGINEER | FULL STACK DEVELOPER <span
+                    class="bracket">/&gt;</span>
+            </p>
+
+            <!-- Dynamic Cyberpunk Loading Bar -->
+            <div class="loading-box">
+                <div class="loading-text">LOADING...</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <!-- Bottom Tech Stack Icons Bar -->
+            <div class="tech-icons-footer">
+                <i class="fa-brands fa-python"></i>
+                <i class="fa-solid fa-cube"></i>
+                <i class="fa-brands fa-react"></i>
+                <i class="fa-brands fa-js"></i>
+                <i class="fa-solid fa-database"></i>
+            </div>
+
+        </div>
+    </div>
+    <nav>
+        <div class="logo">GG</div>
+        <div class="logo-text">Gopal Goswami</div>
+        <ul>
+            <li><a href="/index/index.html" class="active">Home</a></li>
+            <li><a href="/index/about.html">About</a></li>
+            <li><a href="/index/skills.html">Skills</a></li>
+            <li><a href="/index/projects.html">Projects</a></li>
+            <li><a href="/index/experience.html">Experience</a></li>
+            <li><a href="/index/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+
+        <div class="left">
+            <h2>Hell0,I'm</h2>
+            <h1>Gopal Goswami</h1>
+            <h3>AI/ML Enthusiast | Full Stack Developer</h3>
+            <p>
+                I build intelligent AI-powered applications, scalable backend systems, and modern web experiences that
+                solve real-world problems. Passionate about Machine Learning, Web Development, and continuous learning.
+                I specialize in developing AI-driven solutions, responsive web applications, and scalable APIs while
+                focusing on clean architecture, performance, and user experience. Currently, I am expanding my expertise
+                through hands-on projects, open-source contributions, and continuous learning to become a professional
+                AI/ML and Full Stack Engineer.
+            </p>
+            <p>Driven by curiosity and a passion for innovation, I continuously explore new technologies to enhance my
+                skills and stay ahead in the rapidly evolving tech industry. My long-term goal is to contribute to
+                cutting-edge AI solutions and scalable software products that make a positive impact on businesses and
+                society.</p>
+
+            <div class="action-container">
+                <!-- Resume Button wrapped inside anchor tag for download functionality -->
+                <a href="/assets/Gopal_new_resume.pdf" download="Gopal_new_resume.pdf" style="text-decoration: none;">
+                    <button class="resume">Download Resume <i class="fa-solid fa-arrow-down"></i></button>
+                </a>
+
+                <div class="social-icons">
+                    <a href="https://github.com/Gopal-goswami" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gopal-goswami-b43a35318" target="_blank">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gg1971392@gmail.com" target="_blank">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="glow"></div>
+            <div class="ring">
+                <img id="img1" src="/assets/images/profile.jpeg" alt="Profile Picture">
+            </div>
+        </div>
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const welcomeScreen = document.getElementById('welcome-screen');
+            
+            // 2.5 seconds tak animation chalega, phir page smooth open hoga
+            setTimeout(() => {
+                welcomeScreen.classList.add('fade-out');
+            }, 2500);
+        });
+    </script>
+</body>
+
+</html>
